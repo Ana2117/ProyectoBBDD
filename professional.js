@@ -95,6 +95,13 @@ var Professional = /** @class */ (function () {
     Professional.prototype.setProfession = function (newProfession) {
         this.profession = newProfession;
     };
+    Professional.prototype.mostrarDatos = function () {
+        var datos = ("Name: " + this.name + "\n" + "Age: " + this.age + "\n" + "Genre: " + this.genre + "\n" +
+            "Weight: " + this.weight + "\n" + "Height: " + this.height + "\n" + "Hair color: " + this.hairColor + "\n" + "Eye color: " +
+            this.eyeColor + "\n" + "Race: " + this.race + "\n" + "Is retired?: " + this.isRetired + "\n" + "Nationality: " + this.nacionality +
+            "\n" + "Oscars number: " + this.oscarsNumber + "\n" + "Peofession: " + this.profession);
+        return (datos);
+    };
     return Professional;
 }());
 exports.Professional = Professional;

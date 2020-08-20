@@ -20,5 +20,11 @@ var Movie = /** @class */ (function () {
     return Movie;
 }());
 var Sharknado = new Movie("Sharknado", 2011, "USA", "Z");
+Sharknado.actors = [];
+Sharknado.language = "English";
 Sharknado.platform = "Netflix";
+Sharknado.isMCU = false;
+Sharknado.mainCharacterName = "Phinley";
+Sharknado.producer = "Firenado+";
+Sharknado.distributor = "Cool surreal films";
 console.log(Sharknado.mostrarDatos());
