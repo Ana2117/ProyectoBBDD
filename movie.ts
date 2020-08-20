@@ -1,6 +1,6 @@
 import { Professional } from "./professional"
 
-class Movie
+export class Movie
 {
     public title:string
     public releaseYear:number
@@ -31,23 +31,18 @@ class Movie
 
     public mostrarDatos():string
     {
+        let actores:Professional[] = []
+        for (let i = 0; i < actores.length; i++)
+        {
+            this.actors[i] = actores[i]
+            console.log(actores)
+        };
+
         let datos:string = ("Tittle: " + this.title + "\n" + "Release year: " + this.releaseYear + "\n" + "Actors: " + this.actors + "\n" +
-        "Nationality: " + this.nationality + "\n" + "Director: " + this.director + "\n" + "Writer: " + this.writer + "\n" + "Language: " +
+        "Nationality: " + this.nationality + "\n" + "Director: " + this.director.name + "\n" + "Writer: " + this.writer.name + "\n" + "Language: " +
         this.language + "\n" + "Platform: " + this.platform + "\n" + "Is MCU?: " + this.isMCU + "\n" + "Main character name: " + this.mainCharacterName +
         "\n" + "Producer: " + this.producer + "\n" + "Distributor: " + this.distributor + "\n" + "Genre: " + this.genre);
         
         return(datos);
     }
 };
-
-let Sharknado:Movie = new Movie ("Sharknado", 2011, "USA", "Z");
-
-Sharknado.actors = [];
-Sharknado.language = "English";
-Sharknado.platform = "Netflix";
-Sharknado.isMCU = false;
-Sharknado.mainCharacterName = "Phinley";
-Sharknado.producer = "Firenado+";
-Sharknado.distributor = "Cool surreal films"
-
-console.log(Sharknado.mostrarDatos());
