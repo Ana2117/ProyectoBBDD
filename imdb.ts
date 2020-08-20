@@ -1,0 +1,1 @@
+//profession: dato enumerado(actor, guionista, director)[..]
