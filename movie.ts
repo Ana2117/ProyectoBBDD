@@ -31,14 +31,12 @@ export class Movie
 
     public mostrarDatos():string
     {
-        let actores:Professional[] = []
-        for (let i = 0; i < actores.length; i++)
+        let actores:string = "";
+        for (let i = 0; i < this.actors.length; i++)
         {
-            this.actors[i] = actores[i]
-            console.log(actores)
+            actores += this.actors[i].name + ", "
         };
-
-        let datos:string = ("Tittle: " + this.title + "\n" + "Release year: " + this.releaseYear + "\n" + "Actors: " + this.actors + "\n" +
+        let datos:string = ("Tittle: " + this.title + "\n" + "Release year: " + this.releaseYear + "\n" + "Actors: " + actores + "\n" +
         "Nationality: " + this.nationality + "\n" + "Director: " + this.director.name + "\n" + "Writer: " + this.writer.name + "\n" + "Language: " +
         this.language + "\n" + "Platform: " + this.platform + "\n" + "Is MCU?: " + this.isMCU + "\n" + "Main character name: " + this.mainCharacterName +
         "\n" + "Producer: " + this.producer + "\n" + "Distributor: " + this.distributor + "\n" + "Genre: " + this.genre);

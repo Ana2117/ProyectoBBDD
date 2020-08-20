@@ -18,7 +18,7 @@ let movies:Movie[] = [Sharknado, Panther, Doctor];
 
 let prueba:Imdb = new Imdb (movies)
 
-Sharknado.actors = [julia, will, matthew, jason];
+Sharknado.actors = [julia, will];
 Sharknado.director = paz;
 Sharknado.writer = helen;
 Sharknado.language = "English";
@@ -28,9 +28,30 @@ Sharknado.mainCharacterName = "Phinley";
 Sharknado.producer = "Firenado+";
 Sharknado.distributor = "Cool surreal films"
 
-console.log(Sharknado.mostrarDatos());
-console.log(prueba);
+Panther.actors = [matthew, jason];
+Panther.director = paz;
+Panther.writer = helen;
+Panther.language = "French";
+Panther.platform = "Golden";
+Panther.isMCU = true;
+Panther.mainCharacterName = "Georgina";
+Panther.producer = "Camp";
+Panther.distributor = "Look at this fish"
 
+Doctor.actors = [julia, matthew, jason];
+Doctor.director = paz;
+Doctor.writer = helen;
+Doctor.language = "Italian";
+Doctor.platform = "Livin";
+Doctor.isMCU = false;
+Doctor.mainCharacterName = "Frances";
+Doctor.producer = "Fresh";
+Doctor.distributor = "What the hell!"
+
+console.log(Sharknado.mostrarDatos());
+console.log(prueba.films[0].mostrarDatos());
+console.log(prueba.films[1].mostrarDatos());
+console.log(prueba.films[2].mostrarDatos());
 
 
 

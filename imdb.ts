@@ -8,4 +8,14 @@ export class Imdb
     {
         this.films = films
     }
-}
+
+    // public mostrar():string
+    // {
+    //     let allInfo:string = "";
+    //     for (let i = 0; i < this.films.length; i++)
+    //     {
+    //         allInfo += this.films[i].mostrarDatos + "\n"
+    //     };
+    //     return allInfo
+    // }
+};
