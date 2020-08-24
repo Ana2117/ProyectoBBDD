@@ -24,11 +24,6 @@ export class Movie
         this.genre = genre
     }
 
-    public setDirector(director)
-    {
-        this.director = director
-    }
-
     public mostrarDatos():string
     {
         let actores:string = "";

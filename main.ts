@@ -1,15 +1,16 @@
 import { Professional } from "./professional"
 import { Movie } from "./movie"
 import { Imdb } from "./imdb"
+let fs = require("fs");
 
 enum Profession {director, guionista, actor};
 
-let julia:Professional= new Professional ("Julia Roberth",23,"Mujer",65,165,"Negro","Azules","Caucacica",true,"Americana",4,Profession.actor)
-let will:Professional= new Professional ("Will Smith",50,"hombre",65,165,"Negro","Azules","Negro",true,"Americana",20,Profession.actor)
-let matthew:Professional= new Professional ("Matthew McConaughey",45,"hombre",65,175,"Negro","negro","Negro",true,"Americano",4,Profession.actor)
-let jason:Professional= new Professional ("Jason Sth",55,"hombre",58,180,"Blanco","negro","Negro",false,"Americano",4,Profession.actor)
-let helen:Professional= new Professional ("Helen Hunt",45,"hombre",65,175,"Negro","negro","Negro",true,"Americana",4,Profession.guionista)
-let paz:Professional= new Professional ("Paz Vega",45,"Mujer",65,175,"blanca","negro","Negro",false,"Española",4,Profession.director)
+let julia:Professional= new Professional ("Julia Roberts",33,"Mujer",65,169,"Negro","Azules","Caucásica",true,"Americana",4,Profession.actor)
+let will:Professional= new Professional ("Will Smith",50,"Hombre",90,185,"Negro","Azules","Negro",true,"Americano",20,Profession.actor)
+let matthew:Professional= new Professional ("Matthew McConaughey",65,"Hombre",92,195,"Negro","Negro","Negro",true,"Americano",4,Profession.actor)
+let jason:Professional= new Professional ("Jason Sth",17,"Hombre",58,180,"Blanco","negro","Negro",false,"Holandés",4,Profession.actor)
+let helen:Professional= new Professional ("Helen Hunt",45,"Hombre",55,164,"Negro","negro","Negro",true,"Turca",4,Profession.guionista)
+let paz:Professional= new Professional ("Paz Vega",25,"Mujer",65,175,"Blanca","Negro","Negro",false,"Española",4,Profession.director)
 
 let Sharknado:Movie = new Movie ("Sharknado", 2011, "USA", "Z");
 let Panther:Movie = new Movie ("Black Panther", 2016, "France", "Heroes");
@@ -53,6 +54,28 @@ console.log(prueba.films[0].mostrarDatos());
 console.log(prueba.films[1].mostrarDatos());
 console.log(prueba.films[2].mostrarDatos());
 
+let myJson = JSON.stringify(prueba)
+fs.writeFile("imdbBBDD.json", myJson)
+
+let data = fs.readFileSync("imdbBBDD.json");
+// let object:Imdb = JSON.parse(data)
+// console.log(object.films[0].title);
+
+prueba.escribirEnFicheroJSON("w.json");
+// let object:Imdb = prueba.obtenerInstanciaIMDB("w.json");
+// console.log(object);
+// console.log(object.films[0].title);
 
 
+let myImdb: Imdb = prueba.obtenerInstanciaIMDB("imdbBBDD.json")
 
+console.log(myImdb);
+
+
+let miPeli : Movie = new Movie("Harry Potter", 1234, "hola", "hola")
+
+myImdb.films.push(miPeli);
+
+console.log(myImdb);
+
+// myImdb.escribirEnFicheroJSON("imdbBBDD.json")

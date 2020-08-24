@@ -8,9 +8,6 @@ var Movie = /** @class */ (function () {
         this.nationality = nationality;
         this.genre = genre;
     }
-    Movie.prototype.setDirector = function (director) {
-        this.director = director;
-    };
     Movie.prototype.mostrarDatos = function () {
         var actores = "";
         for (var i = 0; i < this.actors.length; i++) {
