@@ -55,27 +55,34 @@ console.log(prueba.films[1].mostrarDatos());
 console.log(prueba.films[2].mostrarDatos());
 
 let myJson = JSON.stringify(prueba)
-fs.writeFile("imdbBBDD.json", myJson)
+fs.writeFile("imdbBBDD.json", myJson, function(err, result) {
+    if(err) {console.log("error", err)}
+    else{console.log("Your file has been created successfully!")};
+})
 
-let data = fs.readFileSync("imdbBBDD.json");
-// let object:Imdb = JSON.parse(data)
-// console.log(object.films[0].title);
+/*
+fs.writeFileSync("imdbBBDD.json", myJson);
+*/
 
-prueba.escribirEnFicheroJSON("w.json");
-// let object:Imdb = prueba.obtenerInstanciaIMDB("w.json");
-// console.log(object);
-// console.log(object.films[0].title);
+//5th update
 
+/*
+let data = fs.readFileSync("imdbBBDD.json", "utf-8")
+let object:Imdb = JSON.parse(data)
+console.log(object.films[0].title);
+*/
 
-let myImdb: Imdb = prueba.obtenerInstanciaIMDB("imdbBBDD.json")
+let object : Imdb = new Imdb ([])
 
-console.log(myImdb);
+fs.readFileSync("imdbBBDD.json", "utf-8", function(err, result) {
+    if(err) {console.log("error", err)}
+    else{console.log("Your file has been read!")
+    object = JSON.parse(result)};
+    console.log(object.films[0].title);
+})
 
-
-let miPeli : Movie = new Movie("Harry Potter", 1234, "hola", "hola")
-
-myImdb.films.push(miPeli);
-
-console.log(myImdb);
-
-// myImdb.escribirEnFicheroJSON("imdbBBDD.json")
+/*
+prueba.escribirEnFicheroJSON("imdbBBDD.json");
+let object:Imdb = prueba.obtenerInstanciaIMDB("imdbBBDD.json");
+console.log(object.films[0].title);
+*/
