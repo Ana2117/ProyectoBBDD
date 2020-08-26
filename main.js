@@ -49,20 +49,15 @@ Doctor.isMCU = false;
 Doctor.mainCharacterName = "Frances";
 Doctor.producer = "Fresh";
 Doctor.distributor = "What the hell!";
-console.log(Sharknado.mostrarDatos());
-console.log(prueba.films[0].mostrarDatos());
-console.log(prueba.films[1].mostrarDatos());
-console.log(prueba.films[2].mostrarDatos());
-var myJson = JSON.stringify(prueba);
-fs.writeFile("imdbBBDD.json", myJson, function (err, result) {
-    if (err) {
-        console.log("error", err);
-    }
-    else {
-        console.log("Your file has been created successfully!");
-    }
-    ;
-});
+// console.log(Sharknado.mostrarDatos());
+// console.log(prueba.films[0].mostrarDatos());
+// console.log(prueba.films[1].mostrarDatos());
+// console.log(prueba.films[2].mostrarDatos());
+// let myJson = JSON.stringify(prueba)
+// fs.writeFile("imdbBBDD.json", myJson, function(err, result) {
+//     if(err) {console.log("error", err)}
+//     else{console.log("Your file has been created successfully!")};
+// })
 /*
 fs.writeFileSync("imdbBBDD.json", myJson);
 */
@@ -72,20 +67,16 @@ let data = fs.readFileSync("imdbBBDD.json", "utf-8")
 let object:Imdb = JSON.parse(data)
 console.log(object.films[0].title);
 */
-var object = new imdb_1.Imdb([]);
-fs.readFileSync("imdbBBDD.json", "utf-8", function (err, result) {
-    if (err) {
-        console.log("error", err);
-    }
-    else {
-        console.log("Your file has been read!");
-        object = JSON.parse(result);
-    }
-    ;
-    console.log(object.films[0].title);
-});
+// let object : Imdb = new Imdb ([])
+// fs.readFileSync("imdbBBDD.json", "utf-8", function(err, result) {
+//     if(err) {console.log("error", err)}
+//     else{console.log("Your file has been read!")
+//     object = JSON.parse(result)};
+//     console.log(object.films[0].title);
+// })
 /*
 prueba.escribirEnFicheroJSON("imdbBBDD.json");
 let object:Imdb = prueba.obtenerInstanciaIMDB("imdbBBDD.json");
 console.log(object.films[0].title);
-*/ 
+*/
+prueba.escribirEnFicheroJSON("hola.json");

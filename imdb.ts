@@ -22,7 +22,10 @@ export class Imdb
     {
         let toRead = fs.readFileSync(nombreFichero);
         let object:Imdb = new Imdb ([])
-        object = JSON.parse(toRead)
+        object.films = JSON.parse(toRead)
+
+        console.log(object);
+        
         return object
     }
 };

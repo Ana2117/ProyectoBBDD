@@ -19,3 +19,13 @@ rl.question("Introduce tittle: ", function (tittle1) {
         });
     });
 });
+/*
+rl.question("What movie do you want to see? ", (answer1) => {
+  let numero = 0
+  numero = answer1
+  let myImdb : Imdb = new Imdb([])
+  myImdb = myImdb.obtenerInstanciaIMDB("imdbBBDD.json")
+  console.log(myImdb.films[numero]);
+  rl.close();
+});
+*/ 
